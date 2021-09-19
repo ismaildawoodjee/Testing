@@ -1,0 +1,7 @@
+.venv
+.vscode
+.metals
+__pycache__
+
+*.egg-info
+.coverage
