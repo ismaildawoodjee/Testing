@@ -10,4 +10,6 @@ class Node:
         self.next_ = next_
 
     def __repr__(self) -> str:
+        if self.data is None:
+            return "[]"
         return f"[{self.data}]"

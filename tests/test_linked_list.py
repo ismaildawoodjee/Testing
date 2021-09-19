@@ -12,7 +12,7 @@ test_cases = [
     (b1.next_, None),
     (c1.next_, c2),
     (c1.next_.data, c2.data),
-    (c1.next_.data, 4)
+    (c1.next_.data, 4),
 ]
 
 
@@ -45,3 +45,16 @@ def test_multiple_nodes():
 
 
 # TODO: test for stdout when printing string repr of Node
+def test_empty_node_repr(capture_stdout):
+    print(a1)
+    assert capture_stdout["stdout"] == "[]\n"
+
+
+def test_data_node_repr(capture_stdout):
+    print(b1)
+    assert capture_stdout["stdout"] == "[5]\n"
+
+
+def test_next_node_repr(capture_stdout):
+    print(c1.next_)
+    assert capture_stdout["stdout"] == "[4]\n"
