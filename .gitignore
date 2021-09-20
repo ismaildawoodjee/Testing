@@ -3,8 +3,10 @@
 .metals
 __pycache__
 temp
+htmlcov
 
 *.egg-info
+*.typed
 .coverage
 
 .mypy_cache
