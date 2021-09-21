@@ -24,7 +24,7 @@ class LinkedList:
         Args:
             head (Node, optional): linked list's head node. Defaults to None.
         """
-        self.head: Node = head
+        self.head: Node | None = head
 
     def add(self, value) -> Node:
         """Add a new node containing data at the end of the linked list.
@@ -40,9 +40,10 @@ class LinkedList:
             while current.next_:
                 current = current.next_
             current.next_ = Node(value)
-        self.head = Node(value)
+            return current.next_
 
-        return current.next_
+        self.head = Node(value)
+        return self.head
 
     def add_to_beginning(self, value) -> Node:
         """Add new node to the beginning of the linked list.
@@ -55,16 +56,21 @@ class LinkedList:
         """
         if self.head is not None:
             self.head = Node(value, self.head)
-        self.head = Node(value)
+            return self.head
 
+        self.head = Node(value)
         return self.head
 
     def __repr__(self) -> str:
-        nodes = []
-        current = self.head
+        """String representation of LinkedList. Each Node should point to the
+        next with an arrow unless the list is empty or contains only one Node.
+        """
+        if self.head is not None:
+            nodes = []
+            current = self.head
+            while current:
+                nodes.append(str(current))
+                current = current.next_
+            return "-> ".join(nodes)
 
-        while current.next_:
-            nodes.append(str(current))
-            current = current.next_
-
-        return "-> ".join(nodes)
+        return "[]"
