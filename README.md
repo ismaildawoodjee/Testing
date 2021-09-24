@@ -13,11 +13,14 @@ pipe the output to `clip.exe` to copy to clipboard.
 Command to generate tree structure:
 
 ```bash
-tree -a -I '<files_to_be_excluded>|<file2>|<file3>' | clip.exe
+tree -a -I '<files_to_be_excluded>|.git|.venv|<more_files_or_folders>' | clip.exe
 ```
 
 ```bash
 .
+├── .github
+│   └── workflows
+│       └── tests.yml
 ├── .gitignore
 ├── README.md
 ├── pyproject.toml
@@ -29,29 +32,32 @@ tree -a -I '<files_to_be_excluded>|<file2>|<file3>' | clip.exe
 │   └── data_structures
 │       ├── __init__.py
 │       └── linked_list.py
-└── tests
-    ├── __init__.py
-    └── test_linked_list.py
+├── tests
+│   ├── __init__.py
+│   ├── conftest.py
+│   ├── test_linked_list.py
+│   └── test_linked_list_node.py
+└── tox.ini
 ```
 
 ## Running tests
 
-For `mypy`:
+For `mypy`, testing only the `src` directory:
 
 ```python
 mypy src
 ```
 
-For `flake8`:
+For `flake8`, to test both the `src` and `tests` directory:
 
 ```python
-flake8 src
+flake8 src tests
 ```
 
 For `pytest`:
 
 ```python
-pytest .
+pytest
 ```
 
 Generate `pytest` coverage report with:
