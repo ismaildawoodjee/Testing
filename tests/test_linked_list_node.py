@@ -23,7 +23,7 @@ def test_multiple_cases(test_input, expected):
 
 
 def test_empty_node():
-    assert a1.data == None
+    assert a1.data is None
 
 
 def test_data_node():
@@ -31,7 +31,7 @@ def test_data_node():
 
 
 def test_next_node():
-    assert b1.next_ == None
+    assert b1.next_ is None
     assert c1.next_ == c2
 
 
