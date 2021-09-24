@@ -27,6 +27,11 @@ jobs:
       - name: Test with tox
         run: tox
 
+      - name: Generate coverage report
+        run: |
+          pip install -r requirements_dev.txt
+          pytest --cov=./ --cov-report=xml
+
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
         with:
