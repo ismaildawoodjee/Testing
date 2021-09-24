@@ -1,5 +1,8 @@
 # Testing
 
+[![Tests](https://github.com/ismaildawoodjee/Testing/actions/workflows/tests.yml/badge.svg)](https://github.com/ismaildawoodjee/Testing/actions/workflows/tests.yml)
+[![codecov](https://codecov.io/gh/ismaildawoodjee/Testing/branch/main/graph/badge.svg?token=KYUUMHRLGC)](https://codecov.io/gh/ismaildawoodjee/Testing)
+
 `requirements_dev.txt` contains packages for running tests.
 
 ## Directory Structure
