@@ -1,3 +1,6 @@
+from typing import Optional
+
+
 class Node:
     def __init__(self, data=None, next_=None):
         """Node object to hold data.
@@ -24,7 +27,7 @@ class LinkedList:
         Args:
             head (Node, optional): linked list's head node. Defaults to None.
         """
-        self.head: Node | None = head
+        self.head: Optional[Node] = head
 
     def add(self, value) -> Node:
         """Add a new node containing data at the end of the linked list.

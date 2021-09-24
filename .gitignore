@@ -1,13 +1,14 @@
 .venv
 .vscode
 .metals
-__pycache__
 temp
 htmlcov
 
 *.egg-info
 *.typed
 .coverage
+.tox
 
+__pycache__
 .mypy_cache
 .pytest_cache
